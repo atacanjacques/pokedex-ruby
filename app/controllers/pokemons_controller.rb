@@ -1,5 +1,5 @@
 class PokemonsController < ApplicationController
-	before_action :set_pokemon, only: [:show, :edit, :update]
+	before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@pokemons = Pokemon.all
@@ -32,12 +32,17 @@ class PokemonsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@pokemon.destroy
+		redirect_to pokemons_path
+	end
+
 	private
 
 	def set_pokemon
 		@pokemon = Pokemon.find params[:id]
 	end
-	
+
 	def pokemon_params
 		params.require(:pokemon).permit(:name)
 	end

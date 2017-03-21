@@ -1,3 +1,6 @@
 <h1>Afficher un Pokémon</h1>
 
 <p>#<%= sprintf '%03d', @pokemon.id %> <%= @pokemon.name %></p>
+
+<%= link_to 'Liste des Pokemon', pokemon_path, class: 'btn btn-primary' %>
+<%= link_to 'Modifier le Pokemon', edit_pokemon_path, class: 'btn btn-primary' %>

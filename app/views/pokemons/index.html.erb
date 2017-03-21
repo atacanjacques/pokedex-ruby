@@ -3,21 +3,30 @@
 <% if @pokemons.any? %>
 <table class="table">
 	<thead>
-	<tr>
-		<td>ID</td>
-		<td>Nom</td>
-	</tr>
+		<tr>
+			<td>ID</td>
+			<td>Nom</td>
+		</tr>
 	</thead>
 	<tbody>
 		<% @pokemons.each do |pokemon| %>
-			<tr>
-			<tr>
-				<td>#<%= sprintf '%03d', pokemon.id %></td>
-				<td><%= pokemon.name %></td>
-			</tr>
+		<tr>
+			<td>#<%= sprintf '%03d', pokemon.id %></td>
+			<td><%= pokemon.name %></td>
+			<td><%= link_to 'Afficher', pokemon, class: 'btn btn-primary' %></td>
+			<td><%= link_to 'Modifier', edit_pokemon_path(pokemon), class: 'btn btn-warning' %></td>
+			<td><%= link_to 'Supprimer', pokemon,
+			method: :delete,
+			data: {confirm: 'Etes-vous sûr de vouloir supprimer ce Pokemon ?'},
+			class: 'btn btn-danger' %></td>
+		</tr>
 		<% end %>
 	</tbody>
 </table>
 <% else %>
-	<p>Il n'y a pas encore de Pokémon.</p>
+<p>Il n'y a pas encore de Pokémon.</p>
 <% end %>
+
+<p>
+	<%= link_to 'Ajouter un Pokemon', new_pokemon_path, class: 'btn btn-success' %>
+</p>
