@@ -1,0 +1,23 @@
+<h1>Liste des Pokemons</h1>
+
+<% if @pokemons.any? %>
+<table>
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nom</td>
+	</tr>
+	</thead>
+	<tbody>
+		<% @pokemons.each do |pokemon| %>
+			<tr>
+			<tr>
+				<td>#<%= sprintf '%03d', pokemon.id %></td>
+				<td><%= pokemon.name %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<% else %>
+	<p>Il n'y a pas encore de Pokémon.</p>
+<% end %>
