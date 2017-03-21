@@ -19,4 +19,17 @@ class PokemonsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def edit
+		@pokemon = Pokemon.find params[:id]
+	end
+
+	def update
+		@pokemon = Pokemon.find params[:id]
+		if @pokemon.update params.require(:pokemon).permit(:name)
+			redirect_to @pokemon
+		else
+			render 'edit'
+		end
+	end
 end
