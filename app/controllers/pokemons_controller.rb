@@ -1,10 +1,11 @@
 class PokemonsController < ApplicationController
+	before_action :set_pokemon, only: [:show, :edit, :update]
+
 	def index
 		@pokemons = Pokemon.all
 	end
 
 	def show
-		@pokemon = Pokemon.find params[:id]
 	end
 
 	def new
@@ -12,7 +13,7 @@ class PokemonsController < ApplicationController
 	end
 
 	def create
-		@pokemon = Pokemon.new params.require(:pokemon).permit(:name)
+		@pokemon = Pokemon.new pokemon_params
 		if @pokemon.save
 			redirect_to @pokemon
 		else
@@ -21,15 +22,23 @@ class PokemonsController < ApplicationController
 	end
 
 	def edit
-		@pokemon = Pokemon.find params[:id]
 	end
 
 	def update
-		@pokemon = Pokemon.find params[:id]
-		if @pokemon.update params.require(:pokemon).permit(:name)
+		if @pokemon.update pokemon_params
 			redirect_to @pokemon
 		else
 			render 'edit'
 		end
+	end
+
+	private
+
+	def set_pokemon
+		@pokemon = Pokemon.find params[:id]
+	end
+	
+	def pokemon_params
+		params.require(:pokemon).permit(:name)
 	end
 end
