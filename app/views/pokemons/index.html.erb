@@ -4,14 +4,14 @@
 <table class="table">
 	<thead>
 		<tr>
-			<td>ID</td>
+			<td>Numéro</td>
 			<td>Nom</td>
 		</tr>
 	</thead>
 	<tbody>
 		<% @pokemons.each do |pokemon| %>
 		<tr>
-			<td>#<%= sprintf '%03d', pokemon.id %></td>
+			<td>#<%= sprintf '%03d', pokemon.number %></td>
 			<td><%= pokemon.name %></td>
 			<td><%= link_to 'Afficher', pokemon, class: 'btn btn-primary' %></td>
 			<td><%= link_to 'Modifier', edit_pokemon_path(pokemon), class: 'btn btn-warning' %></td>

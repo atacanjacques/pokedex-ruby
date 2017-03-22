@@ -2,8 +2,32 @@
 <div class="row">
 	<div class="form-group col-lg-5">
 		<p>
-			<%= f.label :name %>
+			<%= f.label :name, 'Nom' %>
 			<%= f.text_field :name, class: 'form-control' %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-lg-5">
+		<p>
+			<%= f.label :number, 'Numéro' %>
+			<%= f.text_field :number, class: 'form-control' %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-lg-5">
+		<p>
+			<%= f.label :level, 'Niveau' %>
+			<%= f.text_field :level, class: 'form-control' %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-lg-5">
+		<p>
+			<%= f.label :health_points, 'Point de vie' %>
+			<%= f.text_field :health_points, class: 'form-control' %>
 		</p>
 	</div>
 </div>
