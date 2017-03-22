@@ -1,6 +1,11 @@
 <h1>Afficher un Pokémon</h1>
 
-<p>#<%= sprintf '%03d', @pokemon.id %> <%= @pokemon.name %></p>
+<p>Numéro : #<%= sprintf '%03d', @pokemon.number %></p>
+<p>Nom : <%= @pokemon.name %></p>
+<p>Niveau : <%= @pokemon.level %></p>
+<p>Point de vie : <%= @pokemon.health_points %></p>
 
-<%= link_to 'Liste des Pokemon', pokemons_path, class: 'btn btn-primary' %>
-<%= link_to 'Modifier le Pokemon', edit_pokemon_path, class: 'btn btn-primary' %>
+<p>
+	<%= link_to 'Liste des Pokemons', pokemons_path, class: 'btn btn-primary' %>
+	<%= link_to 'Modifier le Pokemon', edit_pokemon_path, class: 'btn btn-primary' %>
+</p>
