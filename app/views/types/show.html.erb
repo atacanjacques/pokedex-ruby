@@ -1,7 +1,7 @@
 <h1>Afficher un Type</h1>
 
 <p>Nom : <%= @type.name %></p>
-<p>Couleur : <%= @type.color %></p>
+<p>Couleur : <%= type_badge(@type.name, @type.color) %></p>
 
 <p>
 	<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>

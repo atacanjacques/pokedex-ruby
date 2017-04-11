@@ -2,7 +2,8 @@ class PokemonsController < ApplicationController
 	before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@pokemons = Pokemon.all
+		@pokemons = Pokemon.paginate(page: params[:page], per_page: 1)
+		.includes(:type)
 	end
 
 	def show
@@ -44,6 +45,6 @@ class PokemonsController < ApplicationController
 	end
 
 	def pokemon_params
-		params.require(:pokemon).permit(:name, :number, :level, :health_points)
+		params.require(:pokemon).permit(:name, :number, :level, :health_points, :type_id)
 	end
 end

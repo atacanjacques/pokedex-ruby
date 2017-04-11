@@ -4223,3 +4223,815 @@ Processing by PokemonsController#new as HTML
 Completed 200 OK in 828ms (Views: 761.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/pokemons/new" for ::1 at 2017-04-11 15:20:18 +0200
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered pokemons/_form.html.erb (93.8ms)
+  Rendered pokemons/new.html.erb within layouts/application (156.3ms)
+Completed 200 OK in 828ms (Views: 732.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for ::1 at 2017-04-11 15:24:45 +0200
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered pokemons/_form.html.erb (31.2ms)
+  Rendered pokemons/new.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 750ms (Views: 663.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:24:50 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 682ms (Views: 569.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/3/edit" for ::1 at 2017-04-11 15:24:58 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered pokemons/_form.html.erb (25.0ms)
+  Rendered pokemons/edit.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 736ms (Views: 643.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/pokemons/3" for ::1 at 2017-04-11 15:25:02 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"frwa6WcARByl1SMP3Wp/Tn7j/2jDLHkpjGLMl/SSjDwuTKZj44eSF9GpCbBxtJK5HrV9KX7OdKN8pgZuKtKwlA==", "pokemon"=>{"name"=>"Bulbizarre", "number"=>"25", "level"=>"20", "health_points"=>"15", "type_id"=>"5"}, "commit"=>"Modifier", "id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "pokemons" SET "type_id" = ? WHERE "pokemons"."id" = ?[0m  [["type_id", 5], ["id", 3]]
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/3
+Completed 302 Found in 108ms (ActiveRecord: 84.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:25:02 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 691ms (Views: 610.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:25:37 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 648ms (Views: 569.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:25:49 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 638ms (Views: 561.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:26:08 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 680ms (Views: 603.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-11 15:26:17 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemons/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 670ms (Views: 589.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-11 15:26:21 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (2.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 612ms (Views: 536.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/types/5/edit" for ::1 at 2017-04-11 15:26:25 +0200
+Processing by TypesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering types/edit.html.erb within layouts/application
+  Rendered types/_form.html.erb (3.0ms)
+  Rendered types/edit.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 720ms (Views: 642.3ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/types/5" for ::1 at 2017-04-11 15:26:29 +0200
+Processing by TypesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0sD4AeBZlmUHj/Gyf7dhUHGQiBk5fyPHpRGd6oVbUT07jwggIKqkFDDJzUlTfmZebplwBE/i6V4Q1JZfaZGMw==", "type"=>{"name"=>"Eau", "color"=>"blue"}, "commit"=>"Modifier", "id"=>"5"}
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (23.9ms)[0m  [1m[33mUPDATE "types" SET "color" = ?, "updated_at" = ? WHERE "types"."id" = ?[0m  [["color", "blue"], ["updated_at", 2017-04-11 13:26:29 UTC], ["id", 5]]
+  [1m[35m (123.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/types/5
+Completed 302 Found in 167ms (ActiveRecord: 147.4ms)
+
+
+Started GET "/types/5" for ::1 at 2017-04-11 15:26:29 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 685ms (Views: 605.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-11 15:26:32 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 622ms (Views: 549.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types/4/edit" for ::1 at 2017-04-11 15:26:35 +0200
+Processing by TypesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/edit.html.erb within layouts/application
+  Rendered types/_form.html.erb (3.0ms)
+  Rendered types/edit.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 712ms (Views: 634.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemns" for ::1 at 2017-04-11 15:26:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/pokemns"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+Started GET "/pokemons" for ::1 at 2017-04-11 15:26:42 +0200
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+Processing by PokemonsController#index as HTML
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (184.1ms)
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemons/index.html.erb within layouts/application (16.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (52.2ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (6559.4ms)
+Completed 200 OK in 14669ms (Views: 14511.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 15:27:03 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 707ms (Views: 625.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:03:04 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (140.6ms)
+Completed 500 Internal Server Error in 531ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `badge' for #<Type:0x00000009a8af08>):
+    11: 	<% if type.nil? %>
+    12: 	aucun
+    13: 	<% else %>
+    14: 		<%= type.badge(type.name, type.color) %>
+    15: 	<% end %>
+    16: </p>
+    17: 
+  
+app/views/pokemons/show.html.erb:14:in `_app_views_pokemons_show_html_erb__280899627_93119920'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4234.6ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:03:35 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1063ms (Views: 984.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:05:42 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 297ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/wamp64/www/ruby/pokedex/app/views/pokemons/show.html.erb:14: syntax error, unexpected ':', expecting ')'
+..._badge(type.name, type.color) : '&empty;'.html_safe );@outpu...
+...                               ^):
+  
+app/views/pokemons/show.html.erb:14: syntax error, unexpected ':', expecting ')'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (4484.6ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:06:31 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (359.4ms)
+Completed 500 Internal Server Error in 656ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pokemon' for #<#<Class:0x0000000b197458>:0x0000000cfb8608>
+Did you mean?  @pokemon):
+    11: 	<% if type.nil? %>
+    12: 	aucun
+    13: 	<% else %>
+    14: 		<%= pokemon.type ? type_badge(type.name, type.color) : '&empty;'.html_safe %>
+    15: 	<% end %>
+    16: </p>
+    17: 
+  
+app/views/pokemons/show.html.erb:14:in `_app_views_pokemons_show_html_erb__280899627_108906620'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4234.6ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:07:06 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (343.8ms)
+Completed 500 Internal Server Error in 625ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pokemon' for #<#<Class:0x0000000b197458>:0x0000000a1a4410>
+Did you mean?  @pokemon):
+    11: 	<% if type.nil? %>
+    12: 	aucun
+    13: 	<% else %>
+    14: 		<%= pokemon.type ? type_badge(pokemon.type.name, type.color) : '&empty;'.html_safe %>
+    15: 	<% end %>
+    16: </p>
+    17: 
+  
+app/views/pokemons/show.html.erb:14:in `_app_views_pokemons_show_html_erb__280899627_84750360'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+Started GET "/" for ::1 at 2017-04-11 16:07:12 +0200
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+Processing by PokemonsController#index as HTML
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendering pokemons/index.html.erb within layouts/application
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5063.8ms)
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/index.html.erb within layouts/application (8994.1ms)
+Completed 500 Internal Server Error in 10944ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `type' for #<#<Class:0x0000000b197458>:0x0000000b3eea30>):
+    13: 		<tr>
+    14: 			<td>#<%= sprintf '%03d', pokemon.number %></td>
+    15: 			<td><%= pokemon.name %></td>
+    16: 			<td><%= pokemon.type ? type_badge(pokemon.type.name, type.color) : '&empty;'.html_safe %></td>
+    17: 			<td><%= link_to 'Afficher', pokemon, class: 'btn btn-primary' %></td>
+    18: 			<td><%= link_to 'Modifier', edit_pokemon_path(pokemon), class: 'btn btn-warning' %></td>
+    19: 			<td><%= link_to 'Supprimer', pokemon,
+  
+app/views/pokemons/index.html.erb:16:in `block in _app_views_pokemons_index_html_erb___310205705_93832540'
+app/views/pokemons/index.html.erb:12:in `_app_views_pokemons_index_html_erb___310205705_93832540'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4264.3ms)
+Started GET "/" for ::1 at 2017-04-11 16:09:46 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 750ms (Views: 667.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:09:51 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (336.2ms)
+Completed 500 Internal Server Error in 621ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pokemon' for #<#<Class:0x0000000b197458>:0x0000000b71d760>
+Did you mean?  @pokemon):
+    11: 	<% if type.nil? %>
+    12: 	aucun
+    13: 	<% else %>
+    14: 		<%= pokemon.type ? type_badge(pokemon.type.name, type.color) : '&empty;'.html_safe %>
+    15: 	<% end %>
+    16: </p>
+    17: 
+  
+app/views/pokemons/show.html.erb:14:in `_app_views_pokemons_show_html_erb__280899627_96008660'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4281.5ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:10:20 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (375.0ms)
+Completed 500 Internal Server Error in 672ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pokemon' for #<#<Class:0x0000000b197458>:0x00000004c97120>
+Did you mean?  @pokemon):
+    11: 	<% if type.nil? %>
+    12: 	aucun
+    13: 	<% else %>
+    14: 		<%= pokemon.type ? type_badge(pokemon.type.name, pokemon.type.color) : '&empty;'.html_safe %>
+    15: 	<% end %>
+    16: </p>
+    17: 
+  
+app/views/pokemons/show.html.erb:14:in `_app_views_pokemons_show_html_erb__280899627_40196520'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.6ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4406.5ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:10:57 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 641ms (Views: 564.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/4" for ::1 at 2017-04-11 16:11:08 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 604ms (Views: 528.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/4/edit" for ::1 at 2017-04-11 16:11:10 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered pokemons/_form.html.erb (25.7ms)
+  Rendered pokemons/edit.html.erb within layouts/application (120.9ms)
+Completed 200 OK in 732ms (Views: 651.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/pokemons/4" for ::1 at 2017-04-11 16:11:14 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DWCxPinMRgAOGTUb5I+uA4aKrG0/brUtNdraS7s0RsISWGytg2FBOEL+vSkH3Hk7CM3Pem22C8+WpuG9QecWYg==", "pokemon"=>{"name"=>"Salamèche", "number"=>"12", "level"=>"10", "health_points"=>"10", "type_id"=>"4"}, "commit"=>"Modifier", "id"=>"4"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "pokemons" SET "type_id" = ? WHERE "pokemons"."id" = ?[0m  [["type_id", 4], ["id", 4]]
+  [1m[35m (102.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/4
+Completed 302 Found in 132ms (ActiveRecord: 106.3ms)
+
+
+Started GET "/pokemons/4" for ::1 at 2017-04-11 16:11:14 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 633ms (Views: 556.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-11 16:11:19 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pokemons/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 696ms (Views: 624.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:12:23 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 631ms (Views: 549.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-11 16:12:32 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 727ms (Views: 611.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-11 16:13:06 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 614ms (Views: 540.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/types/4" for ::1 at 2017-04-11 16:13:10 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 669ms (Views: 580.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types/4" for ::1 at 2017-04-11 16:13:31 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (338.9ms)
+Completed 500 Internal Server Error in 622ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `type' for #<#<Class:0x0000000c4b98d8>:0x00000006fae000>
+Did you mean?  @type):
+    1: <h1>Afficher un Type</h1>
+    2: 
+    3: <p>Nom : <%= @type.name %></p>
+    4: <p>Couleur : <%= type ? type_badge(type.name, type.color) : '&empty;'.html_safe %></p>
+    5: 
+    6: <p>
+    7: 	<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>
+  
+app/views/types/show.html.erb:4:in `_app_views_types_show_html_erb___403659588_58630980'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4346.0ms)
+Started GET "/types" for ::1 at 2017-04-11 16:14:23 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 657ms (Views: 584.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types/4" for ::1 at 2017-04-11 16:14:27 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (326.2ms)
+Completed 500 Internal Server Error in 632ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `type' for #<#<Class:0x0000000c4b98d8>:0x00000009b0a7a8>
+Did you mean?  @type):
+    1: <h1>Afficher un Type</h1>
+    2: 
+    3: <p>Nom : <%= @type.name %></p>
+    4: <p>Couleur : <%= type ? type_badge(type.name, type.color) : '&empty;'.html_safe %></p>
+    5: 
+    6: <p>
+    7: 	<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>
+  
+app/views/types/show.html.erb:4:in `_app_views_types_show_html_erb___403659588_85844160'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4811.0ms)
+Started GET "/types/4" for ::1 at 2017-04-11 16:14:49 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (389.3ms)
+Completed 500 Internal Server Error in 724ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `type' for #<#<Class:0x0000000c4b98d8>:0x0000000b2f2dc0>
+Did you mean?  @type):
+    1: <h1>Afficher un Type</h1>
+    2: 
+    3: <p>Nom : <%= @type.name %></p>
+    4: <p>Couleur : <%= type_badge(type.name, type.color) %></p>
+    5: 
+    6: <p>
+    7: 	<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>
+  
+app/views/types/show.html.erb:4:in `_app_views_types_show_html_erb___403659588_93833220'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (29.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4350.4ms)
+Started GET "/types/4" for ::1 at 2017-04-11 16:15:27 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 2567ms (Views: 2032.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/types/4" for ::1 at 2017-04-11 16:29:14 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 688ms (Views: 575.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-11 16:29:18 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" IN (5, 4)[0m
+  Rendered pokemons/index.html.erb within layouts/application (115.4ms)
+Completed 200 OK in 761ms (Views: 665.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-11 16:29:22 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 729ms (Views: 646.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-11 16:29:26 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 646ms (Views: 562.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-11 16:30:08 +0200
+Processing by PokemonsController#index as HTML
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `paginate' for #<Class:0x000000060b80a0>):
+  
+app/controllers/pokemons_controller.rb:5:in `index'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (4746.6ms)
+Started GET "/pokemons" for ::1 at 2017-04-11 16:33:45 +0200
+Processing by PokemonsController#index as HTML
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `paginate' for #<Class:0x000000060b80a0>):
+  
+app/controllers/pokemons_controller.rb:5:in `index'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (4203.3ms)
+Started GET "/pokemons" for ::1 at 2017-04-11 16:34:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  Rendered pokemons/index.html.erb within layouts/application (140.6ms)
+Completed 500 Internal Server Error in 578ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::BoostrapPagination):
+    2: 
+    3: <% if @pokemons.any? %>
+    4: 
+    5: <% will_paginate @pokemons, renderer: BoostrapPagination::Rails %>
+    6: 
+    7: <table class="table">
+    8: 	<thead>
+  
+app/views/pokemons/index.html.erb:5:in `_app_views_pokemons_index_html_erb__1881594908_54652960'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4344.0ms)
+Started GET "/pokemons" for ::1 at 2017-04-11 16:34:58 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered pokemons/index.html.erb within layouts/application (234.4ms)
+Completed 200 OK in 2188ms (Views: 2112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-11 16:35:43 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (15.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered pokemons/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 641ms (Views: 550.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2017-04-11 16:35:48 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 5[0m
+  Rendered pokemons/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 762ms (Views: 666.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/?page=3" for ::1 at 2017-04-11 16:35:50 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  Rendered pokemons/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 639ms (Views: 557.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/?page=4" for ::1 at 2017-04-11 16:35:51 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendered pokemons/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 640ms (Views: 562.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-11 16:48:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered pokemons/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 2078ms (Views: 1946.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?page=3" for ::1 at 2017-04-11 16:54:33 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  Rendered pokemons/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 731ms (Views: 649.1ms | ActiveRecord: 4.0ms)
+
+

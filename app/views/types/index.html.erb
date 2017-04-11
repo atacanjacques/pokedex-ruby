@@ -13,7 +13,7 @@
     <% @types.each do |type| %>
       <tr>
         <td><%= type.name %></td>
-        <td><%= type.color %></td>
+        <td><%= type_badge(type.name, type.color) %></td>
         <td><%= link_to 'Afficher', type, class: 'btn btn-primary' %></td>
         <td><%= link_to 'Modifier', edit_type_path(type), class: 'btn btn-warning' %></td>
         <td><%= link_to 'Supprimer', type, method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: 'btn btn-danger' %></td>
