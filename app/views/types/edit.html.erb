@@ -1,6 +1,5 @@
-<h1>Editing Type</h1>
+<h1>Modification d'un Type</h1>
 
-<%= render 'form', type: @type %>
+<%= render partial: 'form', locals: {submit: 'Modifier'} %>
 
-<%= link_to 'Show', @type %> |
-<%= link_to 'Back', types_path %>
+<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>

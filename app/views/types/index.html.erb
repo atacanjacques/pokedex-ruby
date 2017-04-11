@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Types</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +14,9 @@
       <tr>
         <td><%= type.name %></td>
         <td><%= type.color %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Afficher', type, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Modifier', edit_type_path(type), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Supprimer', type, method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Type', new_type_path %>
+<%= link_to 'Ajouter un Type', new_type_path, class: 'btn btn-success' %>

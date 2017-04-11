@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1>Afficher un Type</h1>
+
+<p>Nom : <%= @type.name %></p>
+<p>Couleur : <%= @type.color %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @type.name %>
+	<%= link_to 'Liste des Types', types_path, class: 'btn btn-primary' %>
+	<%= link_to 'Modifier le Type', edit_type_path, class: 'btn btn-primary' %>
 </p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @type.color %>
-</p>
-
-<%= link_to 'Edit', edit_type_path(@type) %> |
-<%= link_to 'Back', types_path %>
