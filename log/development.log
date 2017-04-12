@@ -5035,3 +5035,226 @@ Processing by PokemonsController#index as HTML
 Completed 200 OK in 731ms (Views: 649.1ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/moves" for ::1 at 2017-04-11 16:59:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (4219.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMoves (20170411145914)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_moves_on_type_id" ON "moves" ("type_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170411145914"]]
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_moves_on_type_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_moves_on_type_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pokemons_on_type_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pokemons_on_type_id' AND type='index'
+[0m
+Started GET "/moves" for ::1 at 2017-04-11 17:03:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered moves/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 656ms (Views: 572.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-11 17:03:16 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered moves/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 625ms (Views: 548.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-12 14:04:18 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered pokemons/index.html.erb within layouts/application (390.7ms)
+Completed 200 OK in 3485ms (Views: 3233.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 14:05:26 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered moves/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 563ms (Views: 415.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/moves/new" for ::1 at 2017-04-12 14:05:30 +0200
+Processing by MovesController#new as HTML
+  Rendering moves/new.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered moves/_form.html.erb (992.8ms)
+  Rendered moves/new.html.erb within layouts/application (1027.8ms)
+Completed 200 OK in 1528ms (Views: 1483.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/moves" for ::1 at 2017-04-12 14:07:05 +0200
+Processing by MovesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MUsDWiyJvGLIE0n09BOe3sOsoFpr0arps7CvJ8YzsVVAZmrPhQT0eXhNi4AaxbXCyPvf1/itQ1l7V4RGUQgFHQ==", "move"=>{"name"=>"Flammèche", "description"=>"Flammèche inflige des dégâts et a 10% de chance de brûler le Pokémon adverse.", "type_id"=>"4"}, "commit"=>"Create Move"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "moves" ("name", "description", "type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Flammèche"], ["description", "Flammèche inflige des dégâts et a 10% de chance de brûler le Pokémon adverse."], ["type_id", 4], ["created_at", 2017-04-12 12:07:05 UTC], ["updated_at", 2017-04-12 12:07:05 UTC]]
+  [1m[35m (105.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/moves/1
+Completed 302 Found in 122ms (ActiveRecord: 107.0ms)
+
+
+Started GET "/moves/1" for ::1 at 2017-04-12 14:07:05 +0200
+Processing by MovesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT  "moves".* FROM "moves" WHERE "moves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering moves/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered moves/show.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 458ms (Views: 394.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 14:07:13 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 309ms (Views: 272.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/moves/new" for ::1 at 2017-04-12 14:07:15 +0200
+Processing by MovesController#new as HTML
+  Rendering moves/new.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered moves/_form.html.erb (10.5ms)
+  Rendered moves/new.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 396ms (Views: 350.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/moves" for ::1 at 2017-04-12 14:08:24 +0200
+Processing by MovesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YjnKZ2ZBXwXP9qjzUflf8CyXf/RUwyCPgwAp+3qvDp4TFKPyz8wXHn+oaoe/L3TsJ8AAece/yT9L5wKa7ZS61g==", "move"=>{"name"=>"Pistolet à O", "description"=>"Pistolet à O inflige des dégâts, sans effets secondaires", "type_id"=>"5"}, "commit"=>"Create Move"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (82.0ms)[0m  [1m[32mINSERT INTO "moves" ("name", "description", "type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pistolet à O"], ["description", "Pistolet à O inflige des dégâts, sans effets secondaires"], ["type_id", 5], ["created_at", 2017-04-12 12:08:24 UTC], ["updated_at", 2017-04-12 12:08:24 UTC]]
+  [1m[35m (142.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/moves/2
+Completed 302 Found in 237ms (ActiveRecord: 224.7ms)
+
+
+Started GET "/moves/2" for ::1 at 2017-04-12 14:08:24 +0200
+Processing by MovesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT  "moves".* FROM "moves" WHERE "moves"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering moves/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 513ms (Views: 466.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 14:08:29 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 302ms (Views: 264.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 14:08:39 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 445ms (Views: 409.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-12 14:08:42 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 503ms (Views: 432.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 14:16:23 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 938ms (Views: 821.4ms | ActiveRecord: 0.0ms)
+
+
