@@ -11,9 +11,22 @@
 	<% if type.nil? %>
 	aucun
 	<% else %>
-		<%= type ? type_badge(type.name, type.color) : '&empty;'.html_safe %>
+	<%= type ? type_badge(type) : '&empty;'.html_safe %>
 	<% end %>
 </p>
+
+<p>
+  <strong>Attaques:</strong>
+  <%= render partial: 'moves_list', locals: {moves: @pokemon.moves} %>
+</p>
+
+<!--
+Syntaxe alternatif :
+
+<% @pokemon.moves.each do |move| %>
+<%= move.name %>
+<% end %>
+-->
 
 <p>
 	<%= link_to 'Liste des Pokemons', pokemons_path, class: 'btn btn-primary' %>

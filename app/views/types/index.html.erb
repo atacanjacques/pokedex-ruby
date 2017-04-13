@@ -1,3 +1,9 @@
+<p>
+  <%= link_to 'Pokemons', pokemons_path, class: 'btn btn-default' %>
+  <%= link_to 'Types', types_path, class: 'btn btn-default' %>
+  <%= link_to 'Moves', moves_path, class: 'btn btn-default' %>
+</p>
+
 <h1>Types</h1>
 
 <table class="table">
@@ -13,7 +19,7 @@
     <% @types.each do |type| %>
       <tr>
         <td><%= type.name %></td>
-        <td><%= type_badge(type.name, type.color) %></td>
+        <td><%= type_badge(type, type.color) %></td>
         <td><%= link_to 'Afficher', type, class: 'btn btn-primary' %></td>
         <td><%= link_to 'Modifier', edit_type_path(type), class: 'btn btn-warning' %></td>
         <td><%= link_to 'Supprimer', type, method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: 'btn btn-danger' %></td>

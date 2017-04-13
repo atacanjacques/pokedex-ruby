@@ -1,0 +1,6 @@
+<% if moves.any? %>
+<%= raw moves.map { |m| link_to(m.name, m) }
+.join(', ') %>
+<% else %>
+&empty;
+<% end %>

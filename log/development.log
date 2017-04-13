@@ -5258,3 +5258,870 @@ Processing by MovesController#index as HTML
 Completed 200 OK in 938ms (Views: 821.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/moves" for ::1 at 2017-04-12 14:59:15 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (2.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 846ms (Views: 721.5ms | ActiveRecord: 10.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePokemonMoves (20170412130414)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "pokemon_moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pokemon_id" integer, "move_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_pokemon_moves_on_pokemon_id" ON "pokemon_moves" ("pokemon_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pokemon_moves_on_pokemon_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pokemon_moves_on_pokemon_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_pokemon_moves_on_move_id" ON "pokemon_moves" ("move_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170412130414"]]
+  [1m[35m (140.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_moves_on_type_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_moves_on_type_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pokemon_moves_on_move_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pokemon_moves_on_move_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pokemon_moves_on_pokemon_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pokemon_moves_on_pokemon_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pokemons_on_type_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pokemons_on_type_id' AND type='index'
+[0m
+Started GET "/PokemonMove" for ::1 at 2017-04-12 15:04:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/PokemonMove"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (31.3ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.6ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (6156.5ms)
+  [1m[35m (49.7ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/pokemons" for ::1 at 2017-04-12 15:59:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (15.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered pokemons/index.html.erb within layouts/application (375.0ms)
+Completed 200 OK in 5641ms (Views: 5294.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2017-04-12 16:00:44 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 5[0m
+  Rendered pokemons/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 859ms (Views: 773.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:00:47 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (89.1ms)
+Completed 200 OK in 877ms (Views: 734.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for ::1 at 2017-04-12 16:00:53 +0200
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (1576.3ms)
+  Rendered pokemons/new.html.erb within layouts/application (1657.4ms)
+Completed 200 OK in 2427ms (Views: 2257.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons/3/edit" for ::1 at 2017-04-12 16:02:10 +0200
+Processing by PokemonsController#edit as HTML
+Started GET "/pokemons/3/edit" for ::1 at 2017-04-12 16:02:20 +0200
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (213.1ms)
+  Rendered pokemons/edit.html.erb within layouts/application (293.2ms)
+Completed 200 OK in 1083ms (Views: 921.5ms | ActiveRecord: 9.0ms)
+
+
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (128.1ms)
+  Rendered pokemons/edit.html.erb within layouts/application (210.1ms)
+Completed 200 OK in 970ms (Views: 842.9ms | ActiveRecord: 12.0ms)
+
+
+Started PATCH "/pokemons/3" for ::1 at 2017-04-12 16:03:57 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yuaFy1cG47Itg6Q5gjVF8K20r6qraaTlfwwtf9/OzUkkwX2a/k5fuy7qApMQHT3HWfaHzFllD7bMsDsbUZbPLA==", "pokemon"=>{"name"=>"Bulbizarre", "number"=>"25", "level"=>"20", "health_points"=>"15", "type_id"=>"5", "move_ids"=>["", "1"]}, "commit"=>"Modifier", "id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" WHERE "moves"."id" = 1[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  [1m[35mSQL (64.0ms)[0m  [1m[32mINSERT INTO "pokemon_moves" ("pokemon_id", "move_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["pokemon_id", 3], ["move_id", 1], ["created_at", 2017-04-12 14:03:58 UTC], ["updated_at", 2017-04-12 14:03:58 UTC]]
+  [1m[35m (161.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/3
+Completed 302 Found in 311ms (ActiveRecord: 229.2ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:03:58 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 713ms (Views: 629.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons/3/edit" for ::1 at 2017-04-12 16:04:03 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (49.0ms)
+  Rendered pokemons/edit.html.erb within layouts/application (136.1ms)
+Completed 200 OK in 874ms (Views: 782.6ms | ActiveRecord: 4.0ms)
+
+
+Started PATCH "/pokemons/3" for ::1 at 2017-04-12 16:04:08 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lxKwHqHKE3E1alwIhRSGufMyTBFc3qUgD05USu/v8q8xJUWiOFmSJLYASvEykAVuI5oszmhejDprMno3FCtr1Q==", "pokemon"=>{"name"=>"Bulbizarre", "number"=>"25", "level"=>"20", "health_points"=>"15", "type_id"=>"5", "move_ids"=>["", "1", "2"]}, "commit"=>"Modifier", "id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMove Load (2.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" WHERE "moves"."id" IN (1, 2)[0m
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "pokemon_moves" ("pokemon_id", "move_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["pokemon_id", 3], ["move_id", 2], ["created_at", 2017-04-12 14:04:08 UTC], ["updated_at", 2017-04-12 14:04:08 UTC]]
+  [1m[35m (216.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/3
+Completed 302 Found in 278ms (ActiveRecord: 222.1ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:04:08 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 748ms (Views: 646.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:05:50 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 781ms (Views: 686.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:06:36 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (125.0ms)
+Completed 500 Internal Server Error in 422ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `moves' for nil:NilClass):
+    20: 	<%= @pokemon.moves.map(&:name).join(',') %>
+    21: </p>
+    22: 
+    23: <% @pokemons.moves do |toto| %>
+    24: <td><%= toto.name %></td>
+    25: 
+    26: <% end %>
+  
+app/views/pokemons/show.html.erb:23:in `_app_views_pokemons_show_html_erb___809482071_53529020'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (31.3ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.6ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4922.1ms)
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:07:05 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 703ms (Views: 625.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:07:16 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 734ms (Views: 654.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:08:16 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 766ms (Views: 671.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:08:33 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (15.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 766ms (Views: 667.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:10:19 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 734ms (Views: 650.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/3" for ::1 at 2017-04-12 16:27:15 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 750ms (Views: 677.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:27:19 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (6.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 751ms (Views: 669.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/?page=2" for ::1 at 2017-04-12 16:27:26 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 5[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/_moves_list.html.erb (7.9ms)
+  Rendered pokemons/index.html.erb within layouts/application (108.0ms)
+Completed 200 OK in 808ms (Views: 723.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/?page=1" for ::1 at 2017-04-12 16:27:29 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (5.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (97.6ms)
+Completed 200 OK in 792ms (Views: 701.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-12 16:27:32 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 773ms (Views: 681.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:27:34 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (126.1ms)
+  Rendered pokemons/edit.html.erb within layouts/application (208.1ms)
+Completed 200 OK in 1063ms (Views: 978.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/moves/new" for ::1 at 2017-04-12 16:27:46 +0200
+Processing by MovesController#new as HTML
+  Rendering moves/new.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered moves/_form.html.erb (94.5ms)
+  Rendered moves/new.html.erb within layouts/application (167.5ms)
+Completed 200 OK in 964ms (Views: 821.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:27:56 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (2.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (72.0ms)
+  Rendered pokemons/edit.html.erb within layouts/application (160.1ms)
+Completed 200 OK in 900ms (Views: 814.8ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/moves" for ::1 at 2017-04-12 16:28:02 +0200
+Processing by MovesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wa5UGU4hIetI+QcevfY6Vu44tq0/OajbsUkA5DhqQ40ogz2M56xp8PinxWpTIBFK5W/JIKxFQWt5riuFr1H3xQ==", "move"=>{"name"=>"toto", "description"=>"totototo", "type_id"=>"5"}, "commit"=>"Create Move"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (172.8ms)[0m  [1m[32mINSERT INTO "moves" ("name", "description", "type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "toto"], ["description", "totototo"], ["type_id", 5], ["created_at", 2017-04-12 14:28:02 UTC], ["updated_at", 2017-04-12 14:28:02 UTC]]
+  [1m[35m (208.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/moves/3
+Completed 302 Found in 405ms (ActiveRecord: 381.0ms)
+
+
+Started GET "/moves/3" for ::1 at 2017-04-12 16:28:02 +0200
+Processing by MovesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT  "moves".* FROM "moves" WHERE "moves"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering moves/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/show.html.erb within layouts/application (88.1ms)
+Completed 500 Internal Server Error in 438ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `moves' for nil:NilClass):
+    17: 
+    18: <p>
+    19:   <strong>Attaques:</strong>
+    20:   <%= render partial: 'moves_list', locals: {moves: @pokemon.moves} %>
+    21: </p>
+    22: 
+    23: <%= link_to 'Edit', edit_move_path(@move) %> |
+  
+app/views/moves/show.html.erb:20:in `_app_views_moves_show_html_erb__258890946_95739960'
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:28:05 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (92.1ms)
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (1856.2ms)
+  Rendered pokemons/edit.html.erb within layouts/application (1949.3ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5752.8ms)
+Completed 200 OK in 18113ms (Views: 16285.3ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/pokemons/1" for ::1 at 2017-04-12 16:29:04 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tUnIFo5HRwCuJhdBWDe85Ke49hRGc0lkAb04SWFwc9NbbjBHJw/7Ca1PsevKH8TTU/recrR/4jeyAS4t7yhxtg==", "pokemon"=>{"name"=>"Saquedeneu", "number"=>"126", "level"=>"80", "health_points"=>"160", "type_id"=>"", "move_ids"=>["", "3"]}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" WHERE "moves"."id" = 3[0m
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "pokemon_moves" ("pokemon_id", "move_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["pokemon_id", 1], ["move_id", 3], ["created_at", 2017-04-12 14:29:04 UTC], ["updated_at", 2017-04-12 14:29:04 UTC]]
+  [1m[35m (96.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/1
+Completed 302 Found in 145ms (ActiveRecord: 100.1ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-12 16:29:04 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 796ms (Views: 710.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:29:08 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (6.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (120.1ms)
+Completed 200 OK in 859ms (Views: 772.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:29:50 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (59.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (163.1ms)
+Completed 200 OK in 928ms (Views: 842.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/?page=2" for ::1 at 2017-04-12 16:29:54 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 5[0m
+  [1m[36mMove Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 3], ["LIMIT", 1]]
+  [1m[36mMove Load (0.5ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/_moves_list.html.erb (11.5ms)
+  Rendered pokemons/index.html.erb within layouts/application (119.2ms)
+Completed 200 OK in 789ms (Views: 711.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/?page=3" for ::1 at 2017-04-12 16:29:56 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 4], ["LIMIT", 1]]
+  Rendered pokemons/_moves_list.html.erb (8.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (125.1ms)
+Completed 200 OK in 812ms (Views: 736.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/?page=1" for ::1 at 2017-04-12 16:29:59 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (14.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (121.1ms)
+Completed 200 OK in 927ms (Views: 833.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:30:01 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (97.1ms)
+  Rendered pokemons/edit.html.erb within layouts/application (187.1ms)
+Completed 200 OK in 916ms (Views: 828.4ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/pokemons/1" for ::1 at 2017-04-12 16:30:07 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/oreAgjxcjXvEC4qMIMRoCEXmjLAPY/0vUFNI8Znx1l+ZGTQze6QrpUw4uX31X3A2PMbVVRjYEaBTH7pLAOqtQ==", "pokemon"=>{"name"=>"Saquedeneu", "number"=>"126", "level"=>"80", "health_points"=>"160", "type_id"=>"4", "move_ids"=>["", "1", "3"]}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" WHERE "moves"."id" IN (1, 3)[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "pokemon_moves" ("pokemon_id", "move_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["pokemon_id", 1], ["move_id", 1], ["created_at", 2017-04-12 14:30:07 UTC], ["updated_at", 2017-04-12 14:30:07 UTC]]
+  [1m[35mSQL (34.0ms)[0m  [1m[33mUPDATE "pokemons" SET "type_id" = ? WHERE "pokemons"."id" = ?[0m  [["type_id", 4], ["id", 1]]
+  [1m[35m (166.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/1
+Completed 302 Found in 253ms (ActiveRecord: 206.0ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-12 16:30:08 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 753ms (Views: 660.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:30:11 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (13.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (152.1ms)
+Completed 200 OK in 967ms (Views: 869.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/moves/3" for ::1 at 2017-04-12 16:31:11 +0200
+Processing by MovesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT  "moves".* FROM "moves" WHERE "moves"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering moves/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 761ms (Views: 680.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/moves/3" for ::1 at 2017-04-12 16:31:39 +0200
+Processing by MovesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT  "moves".* FROM "moves" WHERE "moves"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering moves/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 750ms (Views: 656.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:31:43 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (14.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (122.1ms)
+Completed 200 OK in 845ms (Views: 756.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-12 16:31:48 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (14.0ms)
+  Rendered pokemons/show.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 884ms (Views: 798.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:39:26 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (46.9ms)
+  Rendered pokemons/index.html.erb within layouts/application (234.4ms)
+Completed 200 OK in 969ms (Views: 828.6ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:40:42 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (0.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 969ms (Views: 894.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/moves" for ::1 at 2017-04-12 16:41:42 +0200
+Processing by MovesController#index as HTML
+  Rendering moves/index.html.erb within layouts/application
+  [1m[36mMove Load (2.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered moves/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 758ms (Views: 666.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-12 16:41:50 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 733ms (Views: 656.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:41:52 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (11.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (134.1ms)
+Completed 200 OK in 909ms (Views: 808.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-12 16:41:54 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (2.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 772ms (Views: 666.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:41:57 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (13.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (127.1ms)
+Completed 200 OK in 918ms (Views: 822.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-12 16:42:01 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 697ms (Views: 606.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/types" for ::1 at 2017-04-12 16:50:46 +0200
+Processing by TypesController#index as HTML
+  Rendering types/index.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  Rendered types/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 797ms (Views: 707.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons" for ::1 at 2017-04-12 16:50:54 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (30.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (213.2ms)
+Completed 200 OK in 958ms (Views: 842.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/?page=2" for ::1 at 2017-04-12 16:50:57 +0200
+Processing by PokemonsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 5[0m
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 3], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 3]]
+  Rendered pokemons/_moves_list.html.erb (14.0ms)
+  Rendered pokemons/index.html.erb within layouts/application (143.1ms)
+Completed 200 OK in 911ms (Views: 802.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/types/5" for ::1 at 2017-04-12 16:51:00 +0200
+Processing by TypesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering types/show.html.erb within layouts/application
+  Rendered types/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 736ms (Views: 658.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-12 16:55:30 +0200
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons"[0m
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = 4[0m
+  [1m[36mMove Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (0.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (15.6ms)
+  Rendered pokemons/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 891ms (Views: 789.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:55:34 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (92.1ms)
+  Rendered pokemons/edit.html.erb within layouts/application (185.1ms)
+Started GET "/pokemons/1/edit" for ::1 at 2017-04-12 16:55:34 +0200
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/edit.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves"[0m
+  Rendered pokemons/_form.html.erb (68.0ms)
+  Rendered pokemons/edit.html.erb within layouts/application (164.1ms)
+Completed 200 OK in 1648ms (Views: 1561.0ms | ActiveRecord: 3.0ms)
+
+
+Completed 200 OK in 1136ms (Views: 1030.9ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/pokemons/1" for ::1 at 2017-04-12 16:55:56 +0200
+Processing by PokemonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kVNjEfbH+W3LGklaMDFUk6k67wpMc+VsAnmOuHpFFhoRvdnDM9gb9rE6hZX3ZzjzUN5ubdgtCt4+dL1ykCF79g==", "pokemon"=>{"name"=>"Saquedeneu", "number"=>"126", "level"=>"80", "health_points"=>"160", "type_id"=>"4", "move_ids"=>["", "1", "2", "3"]}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMove Load (2.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" WHERE "moves"."id" IN (1, 2, 3)[0m
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "pokemon_moves" ("pokemon_id", "move_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["pokemon_id", 1], ["move_id", 2], ["created_at", 2017-04-12 14:55:56 UTC], ["updated_at", 2017-04-12 14:55:56 UTC]]
+  [1m[35m (121.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pokemons/1
+Completed 302 Found in 219ms (ActiveRecord: 131.1ms)
+
+
+Started GET "/pokemons/1" for ::1 at 2017-04-12 16:55:57 +0200
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pokemons/show.html.erb within layouts/application
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT  "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMove Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ? LIMIT ?[0m  [["pokemon_id", 1], ["LIMIT", 1]]
+  [1m[36mMove Load (1.0ms)[0m  [1m[34mSELECT "moves".* FROM "moves" INNER JOIN "pokemon_moves" ON "moves"."id" = "pokemon_moves"."move_id" WHERE "pokemon_moves"."pokemon_id" = ?[0m  [["pokemon_id", 1]]
+  Rendered pokemons/_moves_list.html.erb (14.8ms)
+  Rendered pokemons/show.html.erb within layouts/application (109.1ms)
+Completed 200 OK in 826ms (Views: 740.1ms | ActiveRecord: 3.0ms)
+
+
